@@ -9,18 +9,26 @@ class AppTextField extends StatefulWidget {
   final TextEditingController? controller;
   final String prefixIcon;
   final Color? prefixIconColor;
+  final String? suffixIcon;
+  final Color? suffixIconColor;
   final LinearGradient gradient;
   final TextInputType? textInputType;
   final bool isObscureText;
+  final String? hintText;
+  final TextStyle? hintStyle;
   final String? Function(String?)? validator;
   const AppTextField({
     super.key,
     this.controller,
     required this.prefixIcon,
     required this.gradient,
+    this.suffixIcon,
+    this.suffixIconColor,
     this.validator,
     this.textInputType,
     this.prefixIconColor,
+    this.hintText,
+    this.hintStyle,
     this.isObscureText = false,
   });
 
@@ -71,45 +79,66 @@ class _AppTextFieldState extends State<AppTextField> {
             AppSpacing.s8,
             AppSpacing.s13,
           ),
-          child:
-              _isFocus
-                  ? GradientWidget.icon(
-                    gradient: widget.gradient,
-                    iconPath: widget.prefixIcon,
-                    size: AppIconSize.iconTextFieldHeight,
-                  )
-                  : SvgPicture.asset(
-                    widget.prefixIcon,
-                    colorFilter: ColorFilter.mode(
-                      widget.prefixIconColor ?? AppColors.navGray,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+          child: _buildIconBaseOnFocusState(
+            widget.prefixIcon,
+            widget.prefixIconColor,
+          ),
         ),
         contentPadding: EdgeInsets.zero,
         prefixIconConstraints: BoxConstraints(
           minWidth: AppIconSize.iconTextFieldWidth,
           minHeight: AppIconSize.iconTextFieldHeight,
         ),
+        hintStyle: widget.hintStyle ?? AppTextStyle.body16Regular,
+        hintText: widget.hintText,
+        suffixIcon:
+            widget.suffixIcon != null
+                ? Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.s0,
+                    AppSpacing.s13,
+                    AppSpacing.s18,
+                    AppSpacing.s13,
+                  ),
+                  child: _buildIconBaseOnFocusState(
+                    widget.suffixIcon!,
+                    widget.suffixIconColor,
+                  ),
+                )
+                : null,
+        suffixIconConstraints: BoxConstraints(
+          minWidth: AppIconSize.iconTextFieldWidth,
+          minHeight: AppIconSize.iconTextFieldHeight,
+        ),
         fillColor:
             _isFocus ? AppColors.textFieldBGFocus : AppColors.textFieldBG,
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppRadius.r81),
-          borderSide: BorderSide(color: AppColors.buttonBorder),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppRadius.r81),
-          borderSide: BorderSide(color: AppColors.textFieldFocusBorder),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppRadius.r81),
-          borderSide: const BorderSide(color: AppColors.errorColor),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppRadius.r81),
-          borderSide: const BorderSide(color: AppColors.errorColor),
-        ),
+        enabledBorder: _buildBorder(AppColors.buttonBorder),
+        focusedBorder: _buildBorder(AppColors.textFieldFocusBorder),
+        errorBorder: _buildBorder(AppColors.errorColor),
+        focusedErrorBorder: _buildBorder(AppColors.errorColor),
       ),
     );
   }
+
+  Widget _buildIconBaseOnFocusState(String iconPath, Color? iconColor) {
+    if (_isFocus) {
+      return GradientWidget.icon(
+        gradient: widget.gradient,
+        iconPath: iconPath,
+        size: AppIconSize.iconTextFieldHeight,
+      );
+    }
+    return SvgPicture.asset(
+      iconPath,
+      colorFilter: ColorFilter.mode(
+        iconColor ?? AppColors.navGray,
+        BlendMode.srcIn,
+      ),
+    );
+  }
+
+  OutlineInputBorder _buildBorder(Color color) => OutlineInputBorder(
+    borderRadius: BorderRadius.circular(AppRadius.r81),
+    borderSide: BorderSide(color: color),
+  );
 }

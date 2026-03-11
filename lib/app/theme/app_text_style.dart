@@ -8,6 +8,12 @@ class AppTextStyle {
     color: AppColors.foundationBlueDark,
   );
 
+  static const body16Semibold = TextStyle(
+    fontFamily: 'SFProDisplaySemibold',
+    fontSize: 16,
+    color: AppColors.foundationBlueDark,
+  );
+
   static const body16Regular = TextStyle(
     fontFamily: 'SFProDisplayRegular',
     fontSize: 16,
@@ -16,6 +22,12 @@ class AppTextStyle {
 
   static const body14Regular = TextStyle(
     fontFamily: 'SFProDisplayRegular',
+    fontSize: 14,
+    color: AppColors.foundationBlueDark,
+  );
+
+  static const body14Medium = TextStyle(
+    fontFamily: 'SFProDisplayMedium',
     fontSize: 14,
     color: AppColors.foundationBlueDark,
   );
@@ -36,5 +48,11 @@ class AppTextStyle {
     fontFamily: 'SFProDisplayMedium',
     fontSize: 12,
     color: AppColors.navGray,
+  );
+
+  static const body18SemiBold = TextStyle(
+    fontFamily: 'SFProDisplaySemiBold',
+    fontSize: 18,
+    color: AppColors.foundationBlueDark,
   );
 }

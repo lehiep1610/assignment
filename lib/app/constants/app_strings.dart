@@ -21,6 +21,8 @@ class AppStrings {
   static const String errorEmailRequired = 'Email is required';
   static const String errorEmailInvalid = 'Invalid email address';
   static const String errorPasswordRequired = 'Password is required';
+  static const String errorLoadingData = 'Failed to load data';
+  static const String errorLoadingTrips = 'Failed to load trips';
 
   // bottom nav bar
   static const String home = 'Home';
@@ -28,4 +30,12 @@ class AppStrings {
   static const String chat = 'Chat';
   static const String saved = 'Saved';
   static const String profile = 'Profile';
+
+  // explore page
+  static const searchAddressHint = 'Search address, city, location';
+  static const findYourNextTrip = 'Find your next trip';
+  static const exploreByLivingStyle = 'Explore by living style';
+  static const discoverOtherExperiences = 'Want to discover other experiences';
+  static const seeAll = 'See all';
+  static const rentedProps = 'rented props';
 }

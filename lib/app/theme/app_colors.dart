@@ -18,6 +18,10 @@ class AppColors {
   static const Color orDividerColor = Color(0xFFEBE8F6);
   static const Color orContainerColor = Color(0xFFF3F0FF);
   static const Color errorColor = Color(0xFFEF4444);
+  static const Color loadingCircleColor = Color(0xFFF1F2F6);
+
+  // shadows
+  static final Color cardShadowColor = Color(0xFF434343).withAlpha(35);
 
   // Linear gradient
   static const Color primaryButtonLinearGradientFirst = Color(0xFF917AFD);

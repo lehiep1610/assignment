@@ -28,4 +28,6 @@ class AssetPaths {
   static const String savedActiveIcon = 'assets/icons/saved_nav_bar_active.svg';
   static const String profileActiveIcon =
       'assets/icons/profile_nav_bar_active.svg';
+  static const String searchTextFieldIcon = 'assets/icons/search.svg';
+  static const String settingsTextFieldIcon = 'assets/icons/setting.svg';
 }
