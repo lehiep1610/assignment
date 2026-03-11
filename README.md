@@ -128,5 +128,6 @@ The goal of this architecture was to balance:
 - **Onboarding background** - Onboarding is usually a static page, so there’s no need to use complex widgets like `StaggeredGrid`. A simple Row and Column are enough to do the trick.
 - **Custom BottomNavBar** — Flutter's `BottomNavigationBar` does not support gradient text natively. Replaced with a custom widget using `ShaderMask`.
 - **Tab state preservation** — `DashboardShell` uses `IndexedStack` so each tab retains its state when switching.
+- **Tab slide transition** — When switching tabs, the incoming page slides in from the left or right depending on the direction of navigation. Implemented via `AnimationController` + `FractionalTranslation` wrapping the `IndexedStack`, so animation and state preservation work independently without interfering with each other. No `AutomaticKeepAliveClientMixin` is needed since `IndexedStack` never disposes its children.
 - **Form validation** — `FormValidators` class + `isValidEmail` String extension. Logic is decoupled from UI and easy to unit test.
-- **Responsive layout** — `LayoutBuilder` at page level drives card sizing. No hardcoded pixel widths; heights are derived from `cardWidth * aspectRatio`.
+- **Responsive layout** — `LayoutBuilder` at page level drives card sizing. No hardcoded pixel widths; heights are derived from `cardWidth / aspectRatio`.
