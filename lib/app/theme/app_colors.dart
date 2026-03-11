@@ -27,6 +27,8 @@ class AppColors {
       primaryButtonLinearGradientFirst,
       primaryButtonLinearGradientSecond,
     ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
   );
 
   static const Color overlayOnboardingGradientFirst = Color(0x00FBFBFB);

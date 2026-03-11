@@ -21,4 +21,11 @@ class AppStrings {
   static const String errorEmailRequired = 'Email is required';
   static const String errorEmailInvalid = 'Invalid email address';
   static const String errorPasswordRequired = 'Password is required';
+
+  // bottom nav bar
+  static const String home = 'Home';
+  static const String explore = 'Explore';
+  static const String chat = 'Chat';
+  static const String saved = 'Saved';
+  static const String profile = 'Profile';
 }

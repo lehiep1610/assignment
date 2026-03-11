@@ -20,6 +20,7 @@ class AppSpacing {
   static const s40 = 40.0;
   static const s42 = 42.0;
   static const buttonHeight = 50.0;
+  static const bottomNavBarHeight = 80.0;
 }
 
 class AppIconSize {

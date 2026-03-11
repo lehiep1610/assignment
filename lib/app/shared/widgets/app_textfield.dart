@@ -1,4 +1,4 @@
-import 'package:assignment/app/shared/widgets/gradient_icon.dart';
+import 'package:assignment/app/shared/widgets/gradient_widget.dart';
 import 'package:assignment/app/theme/app_colors.dart';
 import 'package:assignment/app/theme/app_demensions.dart';
 import 'package:assignment/app/theme/app_text_style.dart';
@@ -73,7 +73,7 @@ class _AppTextFieldState extends State<AppTextField> {
           ),
           child:
               _isFocus
-                  ? GradientIcon(
+                  ? GradientWidget.icon(
                     gradient: widget.gradient,
                     iconPath: widget.prefixIcon,
                     size: AppIconSize.iconTextFieldHeight,
