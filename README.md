@@ -22,6 +22,15 @@ flutter run
 ```
 > No API keys or backend services required. All data is served via mock datasources with simulated network delays.
 
+## Login Credentials
+
+The login screen accepts any valid email format and a non-empty password.
+
+**Example:**
+- Email: `test@example.com`
+- Password: `123456`
+
+> No real authentication is performed. Any email address in a valid format combined with any non-empty password will grant access to the app.
 ---
 
 ## Architecture Approach
