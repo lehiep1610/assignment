@@ -11,7 +11,7 @@ A assignment project
 
 ```bash
 # 1. Clone the repository
-git clone <repository-url>
+git clone https://github.com/lehiep1610/assignment.git
 cd assignment
 
 # 2. Install dependencies
