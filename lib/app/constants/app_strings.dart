@@ -38,4 +38,8 @@ class AppStrings {
   static const discoverOtherExperiences = 'Want to discover other experiences';
   static const seeAll = 'See all';
   static const rentedProps = 'rented props';
+
+  // chat page
+  static const yesterday = 'Yesterday';
+  static const searchMessagesHint = 'Search messages';
 }
