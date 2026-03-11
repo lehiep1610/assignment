@@ -9,6 +9,11 @@ class AssetPaths {
   static const String onboardingImage7 = 'assets/images/onboarding7.png';
   static const String onboardingImage8 = 'assets/images/onboarding8.png';
   static const String onboardingImage9 = 'assets/images/onboarding9.png';
+  static const String avatarChat1 = 'assets/images/avatar_chat_1.png';
+  static const String avatarChat2 = 'assets/images/avatar_chat_2.png';
+  static const String avatarChat3 = 'assets/images/avatar_chat_3.png';
+  static const String avatarChat4 = 'assets/images/avatar_chat_4.png';
+  static const String avatarChat5 = 'assets/images/avatar_chat_5.png';
 
   // Icons
   static const String appleIcon = 'assets/icons/ic_apple.svg';
@@ -30,4 +35,8 @@ class AssetPaths {
       'assets/icons/profile_nav_bar_active.svg';
   static const String searchTextFieldIcon = 'assets/icons/search.svg';
   static const String settingsTextFieldIcon = 'assets/icons/setting.svg';
+  static const String messageStatusRead =
+      'assets/icons/message_status_read.svg';
+  static const String messageStatusSent =
+      'assets/icons/message_status_sent.svg';
 }

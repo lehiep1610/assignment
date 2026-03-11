@@ -1,5 +1,4 @@
 import 'package:assignment/app/constants/app_strings.dart';
-import 'package:assignment/app/theme/app_colors.dart';
 import 'package:assignment/app/theme/app_demensions.dart';
 import 'package:assignment/features/explore/data/datasources/explore_remote_datasource.dart';
 import 'package:assignment/features/explore/data/models/trip_model.dart';
