@@ -30,6 +30,7 @@ This project follows a feature-first layered architecture rather than a strict i
 
 The application structure is organized into two main layers within each feature:
 
+```
 feature/
 ├── data/
 │   ├── datasources/
@@ -39,7 +40,7 @@ feature/
     ├── pages/
     ├── view_data/
     └── widgets/
-
+```
 
 The data layer is responsible for:
 - network requests
