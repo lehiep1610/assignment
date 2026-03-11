@@ -16,4 +16,16 @@ class AssetPaths {
   static const String arrowLeft = 'assets/icons/arrow_left.svg';
   static const String passwordTextfield = 'assets/icons/password_textfield.svg';
   static const String userTextField = 'assets/icons/user_textfield.svg';
+  static const String homeIcon = 'assets/icons/home_nav_bar.svg';
+  static const String exploreIcon = 'assets/icons/explore_nav_bar.svg';
+  static const String chatIcon = 'assets/icons/chat_nav_bar.svg';
+  static const String savedIcon = 'assets/icons/saved_nav_bar.svg';
+  static const String profileIcon = 'assets/icons/profile_nav_bar.svg';
+  static const String homeActiveIcon = 'assets/icons/home_nav_bar_active.svg';
+  static const String exploreActiveIcon =
+      'assets/icons/explore_nav_bar_active.svg';
+  static const String chatActiveIcon = 'assets/icons/chat_nav_bar_active.svg';
+  static const String savedActiveIcon = 'assets/icons/saved_nav_bar_active.svg';
+  static const String profileActiveIcon =
+      'assets/icons/profile_nav_bar_active.svg';
 }

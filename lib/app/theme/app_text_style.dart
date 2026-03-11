@@ -31,4 +31,10 @@ class AppTextStyle {
     fontSize: 12,
     color: AppColors.captionText9E91DA,
   );
+
+  static const caption12Medium = TextStyle(
+    fontFamily: 'SFProDisplayMedium',
+    fontSize: 12,
+    color: AppColors.navGray,
+  );
 }

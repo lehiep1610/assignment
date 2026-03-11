@@ -2,12 +2,17 @@ import 'package:assignment/app/constants/asset_paths.dart';
 import 'package:assignment/app/theme/app_colors.dart';
 import 'package:assignment/app/theme/app_demensions.dart';
 import 'package:assignment/core/router/app_router.dart';
+import 'package:assignment/core/router/route_name.dart';
 import 'package:assignment/features/auth/presentation/login/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
+
+  void _onLoginPressed(BuildContext context) {
+    AppRouter.navigateTo(context, RouteName.dashboard);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 LoginForm(
-                  onLoginPressed: () {},
+                  onLoginPressed: () => _onLoginPressed(context),
                   onForgotPasswordPressed: () {},
                   onAppleSignInPressed: () {},
                   onGoogleSignInPressed: () {},
