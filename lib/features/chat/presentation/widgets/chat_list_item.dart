@@ -21,7 +21,7 @@ class ChatListItem extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
-            radius: AppRadius.r28,
+            radius: AvatarRadius.conversationAvatarRadius,
             backgroundColor: AppColors.textFieldBG,
             backgroundImage: AssetImage(chat.avatarAsset),
           ),

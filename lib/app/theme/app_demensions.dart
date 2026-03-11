@@ -10,6 +10,7 @@ class AppSpacing {
   static const s2 = 2.0;
   static const s4 = 4.0;
   static const s8 = 8.0;
+  static const s9 = 9.0;
   static const s12 = 12.0;
   static const s14 = 14.0;
   static const s13 = 13.0;
@@ -23,8 +24,10 @@ class AppSpacing {
   static const s36 = 36.0;
   static const s40 = 40.0;
   static const s42 = 42.0;
+  static const s56 = 56.0;
   static const buttonHeight = 50.0;
   static const bottomNavBarHeight = 80.0;
+  static const borderWidth = 0.5;
 }
 
 class AppIconSize {
@@ -34,15 +37,29 @@ class AppIconSize {
   static const iconButtonHeight = 24.0;
   static const iconMessageStatusWidth = 20.0;
   static const iconMessageStatusHeight = 20.0;
+  static const iconProfileSettingsWidth = 40.0;
+  static const iconProfileSettingsHeight = 40.0;
+}
+
+class AppImageSize {
+  static const imageProfileWidth = 80.0;
+  static const imageProfileHeight = 80.0;
 }
 
 class AppRadius {
   static const r10 = 10.0;
+  static const r16 = 16.0;
   static const r24 = 24.0;
   static const r28 = 28.0;
   static const r30 = 30.0;
+  static const r40 = 40.0;
   static const r81 = 81.0;
   static const r96 = 96.0;
+}
+
+class AvatarRadius {
+  static const conversationAvatarRadius = 26.0;
+  static const profileAvatarRadius = 40.0;
 }
 
 class AppGrid {

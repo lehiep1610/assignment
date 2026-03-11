@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   // Foundation
   static const Color foundationBlueDark = Color(0xFF1A1E25);
+  static const Color foundationWhiteNormalHover = Color(0xFFD6D6D6);
 
   // Neutral
   static const Color neutralGray0 = Color(0xFFFFFFFF);
@@ -22,6 +23,9 @@ class AppColors {
 
   // shadows
   static final Color cardShadowColor = Color(0xFF434343).withAlpha(35);
+  static final Color profileSettingsShadowColor = Color(
+    0xFF454545,
+  ).withAlpha(40);
 
   // Linear gradient
   static const Color primaryButtonLinearGradientFirst = Color(0xFF917AFD);
