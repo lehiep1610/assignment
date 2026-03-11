@@ -12,11 +12,13 @@ class AppTextField extends StatefulWidget {
   final LinearGradient gradient;
   final TextInputType? textInputType;
   final bool isObscureText;
+  final String? Function(String?)? validator;
   const AppTextField({
     super.key,
     this.controller,
     required this.prefixIcon,
     required this.gradient,
+    this.validator,
     this.textInputType,
     this.prefixIconColor,
     this.isObscureText = false,
@@ -49,8 +51,10 @@ class _AppTextFieldState extends State<AppTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      controller: widget.controller,
       focusNode: _focusNode,
+      validator: widget.validator,
       cursorColor: AppColors.foundationBlueDark,
       cursorWidth: 1.0,
       onTapOutside: (event) => _focusNode.unfocus(),
@@ -72,7 +76,7 @@ class _AppTextFieldState extends State<AppTextField> {
                   ? GradientIcon(
                     gradient: widget.gradient,
                     iconPath: widget.prefixIcon,
-                    size: AppIconSize.iconHeight,
+                    size: AppIconSize.iconTextFieldHeight,
                   )
                   : SvgPicture.asset(
                     widget.prefixIcon,
@@ -84,8 +88,8 @@ class _AppTextFieldState extends State<AppTextField> {
         ),
         contentPadding: EdgeInsets.zero,
         prefixIconConstraints: BoxConstraints(
-          minWidth: AppIconSize.iconWidth,
-          minHeight: AppIconSize.iconHeight,
+          minWidth: AppIconSize.iconTextFieldWidth,
+          minHeight: AppIconSize.iconTextFieldHeight,
         ),
         fillColor:
             _isFocus ? AppColors.textFieldBGFocus : AppColors.textFieldBG,
@@ -96,6 +100,14 @@ class _AppTextFieldState extends State<AppTextField> {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.r81),
           borderSide: BorderSide(color: AppColors.textFieldFocusBorder),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(AppRadius.r81),
+          borderSide: const BorderSide(color: AppColors.errorColor),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(AppRadius.r81),
+          borderSide: const BorderSide(color: AppColors.errorColor),
         ),
       ),
     );

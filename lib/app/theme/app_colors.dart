@@ -14,6 +14,10 @@ class AppColors {
   static const Color textFieldBG = Color(0xFFF2F2F3);
   static const Color textFieldBGFocus = Color(0xFFF1F1FE);
   static const Color textFieldFocusBorder = Color(0xFF917AFD);
+  static const Color captionText9E91DA = Color(0xFF9E91DA);
+  static const Color orDividerColor = Color(0xFFEBE8F6);
+  static const Color orContainerColor = Color(0xFFF3F0FF);
+  static const Color errorColor = Color(0xFFEF4444);
 
   // Linear gradient
   static const Color primaryButtonLinearGradientFirst = Color(0xFF917AFD);

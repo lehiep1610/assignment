@@ -25,4 +25,10 @@ class AppTextStyle {
     fontSize: 16,
     color: AppColors.foundationBlueDark,
   );
+
+  static const caption12SemiBold = TextStyle(
+    fontFamily: 'SFProDisplaySemiBold',
+    fontSize: 12,
+    color: AppColors.captionText9E91DA,
+  );
 }

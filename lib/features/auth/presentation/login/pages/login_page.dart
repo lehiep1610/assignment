@@ -26,7 +26,16 @@ class LoginPage extends StatelessWidget {
               horizontal: AppPaddings.horizontalPage,
               vertical: AppPaddings.verticalPage,
             ),
-            child: Column(children: [LoginForm()]),
+            child: Column(
+              children: [
+                LoginForm(
+                  onLoginPressed: () {},
+                  onForgotPasswordPressed: () {},
+                  onAppleSignInPressed: () {},
+                  onGoogleSignInPressed: () {},
+                ),
+              ],
+            ),
           ),
         ),
       ),

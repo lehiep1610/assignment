@@ -10,6 +10,7 @@ class AppSpacing {
   static const s4 = 4.0;
   static const s8 = 8.0;
   static const s12 = 12.0;
+  static const s14 = 14.0;
   static const s13 = 13.0;
   static const s16 = 16.0;
   static const s18 = 18.0;
@@ -17,15 +18,19 @@ class AppSpacing {
   static const s28 = 28.0;
   static const s32 = 32.0;
   static const s40 = 40.0;
+  static const s42 = 42.0;
   static const buttonHeight = 50.0;
 }
 
 class AppIconSize {
-  static const iconWidth = 22.0;
-  static const iconHeight = 22.0;
+  static const iconTextFieldWidth = 22.0;
+  static const iconTextFieldHeight = 22.0;
+  static const iconButtonWidth = 24.0;
+  static const iconButtonHeight = 24.0;
 }
 
 class AppRadius {
+  static const r24 = 24.0;
   static const r30 = 30.0;
   static const r81 = 81.0;
 }

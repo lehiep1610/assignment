@@ -2,6 +2,7 @@ import 'package:assignment/app/theme/app_colors.dart';
 import 'package:assignment/app/theme/app_demensions.dart';
 import 'package:assignment/app/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 enum _AppButtonType { common, gradient }
 
@@ -13,12 +14,14 @@ class AppButton extends StatelessWidget {
   final LinearGradient? gradient;
   final _AppButtonType _type;
   final VoidCallback? onTap;
+  final String? iconPath;
   const AppButton.gradient({
     super.key,
     required this.text,
     this.textStyle,
     this.gradient,
     this.onTap,
+    this.iconPath,
   }) : _type = _AppButtonType.gradient,
        bgColor = null,
        borderColor = null;
@@ -30,6 +33,7 @@ class AppButton extends StatelessWidget {
     this.bgColor,
     this.borderColor,
     this.onTap,
+    this.iconPath,
   }) : _type = _AppButtonType.common,
        gradient = null;
 
@@ -45,7 +49,7 @@ class AppButton extends StatelessWidget {
                 : (bgColor ?? AppColors.neutralGray0),
         gradient: _type == _AppButtonType.gradient ? gradient : null,
         borderRadius: BorderRadius.circular(AppRadius.r30),
-        border: Border.all(color: borderColor ?? AppColors.transparent),
+        border: borderColor != null ? Border.all(color: borderColor!) : null,
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(AppRadius.r30),
@@ -53,8 +57,33 @@ class AppButton extends StatelessWidget {
           color: AppColors.transparent,
           child: InkWell(
             onTap: onTap,
-            child: Center(
-              child: Text(text, style: textStyle ?? AppTextStyle.body16Regular),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: AppSpacing.s16),
+              child:
+                  iconPath != null
+                      ? Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: SvgPicture.asset(
+                              iconPath!,
+                              height: AppIconSize.iconButtonHeight,
+                              width: AppIconSize.iconButtonWidth,
+                            ),
+                          ),
+                          Text(
+                            text,
+                            style: textStyle ?? AppTextStyle.body16Regular,
+                          ),
+                        ],
+                      )
+                      : Center(
+                        child: Text(
+                          text,
+                          style: textStyle ?? AppTextStyle.body16Regular,
+                        ),
+                      ),
             ),
           ),
         ),

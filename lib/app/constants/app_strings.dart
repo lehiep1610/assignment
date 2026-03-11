@@ -16,4 +16,9 @@ class AppStrings {
   static const String signInWithGoogle = 'Sign in with Google';
   static const String userName = 'Username';
   static const String password = 'Password';
+
+  // error strings
+  static const String errorEmailRequired = 'Email is required';
+  static const String errorEmailInvalid = 'Invalid email address';
+  static const String errorPasswordRequired = 'Password is required';
 }
