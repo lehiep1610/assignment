@@ -110,7 +110,7 @@ class _NavItem extends StatelessWidget {
               GradientWidget.text(
                 text: label,
                 textStyle: AppTextStyle.caption12SemiBold.copyWith(
-                  color: AppColors.neutralGray0,
+                  color: AppColors.orContainerColor,
                 ),
                 gradient: AppColors.primaryButtonLinearGradient,
               )
