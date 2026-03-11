@@ -31,14 +31,14 @@ This project follows a feature-first layered architecture rather than a strict i
 The application structure is organized into two main layers within each feature:
 
 feature/
-  data/
-    datasources/
-    models/
-    repositories/
-  presentation/
-    pages/
-    view_data/
-    widgets/
+├── data/
+│   ├── datasources/
+│   ├── models/
+│   └── repositories/
+└── presentation/
+    ├── pages/
+    ├── view_data/
+    └── widgets/
 
 
 The data layer is responsible for:
