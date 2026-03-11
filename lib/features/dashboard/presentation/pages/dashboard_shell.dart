@@ -13,8 +13,11 @@ class DashboardShell extends StatefulWidget {
   State<DashboardShell> createState() => _DashboardShellState();
 }
 
-class _DashboardShellState extends State<DashboardShell> {
+class _DashboardShellState extends State<DashboardShell>
+    with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
+  bool _isForward = true;
+  late final AnimationController _controller;
 
   final List<Widget> _pages = const [
     HomePage(),
@@ -25,12 +28,51 @@ class _DashboardShellState extends State<DashboardShell> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 200),
+      value: 1.0,
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: _currentIndex, children: _pages),
+      body: ClipRect(
+        child: AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            return FractionalTranslation(
+              translation: Offset(
+                _isForward
+                    ? (1.0 - _controller.value)
+                    : (_controller.value - 1.0),
+                0.0,
+              ),
+              child: child,
+            );
+          },
+          child: IndexedStack(index: _currentIndex, children: _pages),
+        ),
+      ),
       bottomNavigationBar: BottomNavBar(
         currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
+        onTap: (index) {
+          if (index == _currentIndex) return;
+          setState(() {
+            _isForward = index > _currentIndex;
+            _currentIndex = index;
+          });
+          _controller.forward(from: 0.0);
+        },
       ),
     );
   }
