@@ -42,4 +42,11 @@ class AppStrings {
   // chat page
   static const yesterday = 'Yesterday';
   static const searchMessagesHint = 'Search messages';
+
+  // profile page
+  static const personalDetails = 'Personal details';
+  static const settings = 'Settings';
+  static const paymentDetails = 'Payment details';
+  static const faq = 'FAQ';
+  static const switchToHosting = 'Switch to hosting';
 }

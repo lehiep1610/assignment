@@ -19,6 +19,7 @@ class AssetPaths {
   static const String appleIcon = 'assets/icons/ic_apple.svg';
   static const String googleIcon = 'assets/icons/ic_google.svg';
   static const String arrowLeft = 'assets/icons/arrow_left.svg';
+  static const String arrowRight = 'assets/icons/arrow_right.svg';
   static const String passwordTextfield = 'assets/icons/password_textfield.svg';
   static const String userTextField = 'assets/icons/user_textfield.svg';
   static const String homeIcon = 'assets/icons/home_nav_bar.svg';
@@ -39,4 +40,9 @@ class AssetPaths {
       'assets/icons/message_status_read.svg';
   static const String messageStatusSent =
       'assets/icons/message_status_sent.svg';
+  static const String profileSettings = 'assets/icons/profile_settings.svg';
+  static const String profileCardIcon = 'assets/icons/profile_card.svg';
+  static const String profileFAQIcon = 'assets/icons/profile_faq.svg';
+  static const String profileSwitchAccountIcon =
+      'assets/icons/profile_switch.svg';
 }
