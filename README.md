@@ -67,10 +67,12 @@ This separation ensures that UI code does not directly handle networking concern
 
 A strict Clean Architecture setup would normally introduce additional layers such as:
 
+```
 domain/
   entities
   repository contracts
   use cases
+```
 
 However, for this assignment the domain complexity is relatively small. The Explore feature primarily performs remote data fetching and UI rendering without complex business rules or domain logic.
 
